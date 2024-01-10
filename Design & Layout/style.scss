@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+@mixin min-breakpoint ($minwidth) {
+    @media screen and (min-width: $minwidth) {/*Handles media queries with minimum screen width given*/
+        @content;
+    }
+}
+@mixin breakpoint ($minwidth, $maxwidth){ /*Handles media queries with max and min screen widths given*/
+    @media screen and (min-width: $minwidth) and (max-width: $maxwidth){
+        @content;
+    }
+}
+@mixin max-breakpoint ($maxwidth) { /*Handles media queries with maximum screen width given*/
+    @media screen and (max-width: $maxwidth) {
+        @content;
+    }
+}
+@mixin img-stack($img-link){
+    background: url($img-link) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'El Messiri', sans-serif;
+}
+body{background-color: #CAB69D;}
+
+/*Navigation*/
+/*Horizontal Layout*/
+.navigation{
+    top: 0;
+    background-color: #CAB69D;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    z-index: 1;
+    @include breakpoint(752px, 1024px){margin-top: 10px;}
+    @include min-breakpoint(1025px){
+        position: fixed; /*Nav Bar follows as user scrolls on the page.*/
+        height: 100px;
+        width: 100%;
+        grid-template-columns: 30% 20% 30%;
+        column-gap: 10%;
+    }
+}
+
+.logo-img{max-width: 200px;}
+
+.soc-med_links, .page-links{ /*Unordered Lists within the nav bar.*/
+    padding: 0%;
+    list-style-type: none; 
+    display: inline-flex; 
+    justify-self: center;
+    align-items: center;
+    font-size: small;
+    @include max-breakpoint(1024px){
+        font-size: 25px;
+    }
+}
+.soc-med_links img{
+    max-width: 55%;
+    @include max-breakpoint(752px){visibility: hidden;}
+}
+.page-links img{max-width: 50%;}
+.page-links li{padding-left: 5px;}
+.page-links a{
+    color: black; 
+    text-decoration: none;
+}
+.page-links a:visited{color: black;}
+.page-links a:hover{color: #946d3e;}
+#bag{padding-left: 20%;}
+
+.intro{
+    width: auto;
+    margin: auto;
+}
+
+/*Footer*/
+footer{
+    bottom:0;
+    width:100%;
+    height:450px;
+    background:#CAB69D;
+}
+footer section{padding: 10px;}
+#logo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+}
+#logo img{max-width: 25%;}
+#logo p{padding: 10px;}
+.footer-links{
+    width: auto;
+    display: grid;
+    grid-template-columns: 34% 15% 15% 21%;
+    column-gap: 5%;
+    @include max-breakpoint(752px){
+        display: flex;
+        flex-direction: column;
+    }
+}
+footer li{list-style-type: none;}
+
+#email{
+    max-width: 100%;
+    padding: 2%;}
+#signup-btn{margin-top: 5px;}
+footer hr{width: 90%; margin-left: auto;  margin-right: auto;}
+#copyright{
+    margin-left: auto; margin-right: auto; 
+    width: 295px; 
+    bottom: 0;
+} 
+footer a{color: black; text-decoration: none;}
+footer a:visited{color: black;}
+footer a:hover{color: #946d3e;}
+
+/*Landing Page - Snap Scroll Effect*/
+.landing-content{
+    position: relative;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    max-width: 100%;
+    height: 100vh;
+}
+.landing-content section{
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    @include min-breakpoint(480px){scroll-snap-align: start;}
+}
+
+.landing-intro{
+    width: 2000px;
+    height: 100%;
+    display: flex;
+    margin: auto;
+}
+
+/*PAGE DESIGNS*/
+/*Home Page*/
+.landing{
+    top: 20vh;
+    position: absolute;
+    margin: auto;
+    transform: translate(-50% -50%);
+    width: 450px;
+    height: 350px;
+    z-index: -1;
+    @include max-breakpoint(480px){
+        top: 0%;
+        width: 100vw;
+        height: 100%;
+    }
+}
+
+.img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include breakpoint(1025px, 1200px){
+        width: 80%;
+        height: 70%;
+    }
+}
+
+/*Landing Page - Welcome Stack*/
+.stack-1{@include img-stack("/Media/Images/Landing/stack1.jpg");}
+.stack-2{@include img-stack("/Media/Images/Landing/stack2.jpg");}
+.stack-3{@include img-stack("/Media/Images/Landing/stack3.jpg");}
+.stack-4{@include img-stack("/Media/Images/Landing/stack4.jpg");}
+.stack-5{@include img-stack("/Media/Images/Landing/stack5.jpg");}
+.stack-6{@include img-stack("/Media/Images/Landing/stack6.jpg");}
+.stack-7{@include img-stack("/Media/Images/Landing/stack7.jpg");}
+
+.section1-label{
+    position: relative;
+    width: 55%;
+    height: auto;
+    margin-top: 3.5%;
+    margin-left: 5%;
+    margin-right: auto;
+    font-size: 115px;
+    font-weight: 800;
+    font-family: 'Josefin Sans', sans-serif;
+    z-index: 1; 
+    @include max-breakpoint(480px){
+        font-size: 50px;
+        width: 90%;
+        height: fit-content;
+        margin-top: auto; margin-bottom: auto;
+    }
+    @include breakpoint(481px, 1024px){
+        margin-bottom: auto; margin-left: auto; margin-right: auto;
+        width: 70%;
+        font-size: 5vw;
+    }
+    @include breakpoint(1025px, 1200px){
+        margin-top: auto; margin-bottom: auto;
+        width: 40%;
+        font-size: 8vw;
+    }
+    @include min-breakpoint(1025px){
+        width: 40%;
+        font-size: 8vw;
+    }
+}
+
+.section1-label img{
+    @include max-breakpoint(1024px){width: 90vw;}
+    @include breakpoint(481px, 1024px){width: 100%;}
+    @include min-breakpoint(1025px){width: 100%;}
+}
+
+/*Product Gallery*/
+.prod-gallery{
+    background-image: linear-gradient(to bottom, #CAB69D, white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @include breakpoint(753px, 1200px){
+        display: grid;
+        grid-template-columns: 49% 50%;
+        width: 100%;
+    }
+}
+
+.link-images{
+    display: flex; 
+    flex-direction: row;
+    max-width: 98%;
+    justify-content: space-evenly;
+    margin: auto;
+    @include max-breakpoint(752px){
+        width: 95%;
+        height: 95%;
+        display: grid;
+        margin-top: auto;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 30% 30%;
+        justify-content: center; 
+        align-items: center;
+    }
+    @include breakpoint(753px, 1200px){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 35%;
+        height: 95%;
+    }
+}
+
+.prod-link, .prod-link p, .prod-link a{
+    width: 250px;
+    height: 200px;
+    @include max-breakpoint(752px){
+        max-width: 100%;
+        max-height: 90% ;
+        margin: auto;
+    }
+    @include breakpoint(753px, 1200px){
+        width: 100%;
+        height: 20%;   
+    }
+}
+
+.prod-link p{
+    padding: auto;
+    margin: auto;
+    opacity: 0;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, .80);
+    padding-top: 50%; padding-left: 10px;
+}
+.prod-link:hover p{
+    opacity: 1;
+    z-index: 98;
+    transition: all ease 0.5s; 
+    color: black; 
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: 30px;
+    @include max-breakpoint(480px){
+        max-width: 100%;
+        max-height: 80% ;
+    }
+}
+
+.prod-gallery video{
+    margin-top: 5px;
+    max-width: 100%;
+    height: 400px;
+    z-index: 0;
+    @include max-breakpoint(752px){
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        visibility: hidden;
+        z-index: -10;
+    }
+    @include breakpoint(753px, 1200px){
+        position: relative;
+        width: 60%;
+    }
+}
+
+.img1{@include img-stack("/Media/Images/Landing/Slider/s1.jpg")}
+.img2{@include img-stack("/Media/Images/Landing/Slider/s2.jpg")}
+.img3{@include img-stack("/Media/Images/Landing/Slider/s3.jpg")}
+.img4{@include img-stack("/Media/Images/Landing/Slider/s4.jpg")}
+.img5{@include img-stack("/Media/Images/Landing/Slider/s5.jpg")}
+
+/*Section 2 - What is LITTLE*/
+.what-little{
+    background-color: white;
+}
+
+.what-little article{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.what-little aside{
+    max-width: 50%;
+}
+
+.what-img{
+    max-width: 100%;
+    max-height: 90vh;
+}
+
+
+/*Section 3 - How LITTLE operates*/
+
+.how-little{background-image: linear-gradient(to bottom, white, #b18857);}
+.how-little article{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    @include max-breakpoint(752px){width: 95%;}
+    @include max-breakpoint(480px){flex-direction: column;}
+}
+.how-little aside{width: 100%;}
+.how-images{
+    @include max-breakpoint(480px){
+        display: flex;
+        flex-direction: row;
+    }
+}
+.how-images img{
+    max-width: 100%;
+    @include max-breakpoint(480px){max-width: 95%;}
+}
+
+/*Section 4 - Where to Finc LITTLE*/
+.where-little{
+    background-image: linear-gradient(to bottom, #b18857, white);
+}
+
+.where-little article{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    column-gap: 5%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.where-little aside{
+    max-width: 50%;
+}
+
+.where-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.how-little h2, .what-little h2, .where-little h2{@include max-breakpoint(752px){font-size: 20px;}}
+.how-little p, .what-little p, .where-little p{@include max-breakpoint(752px){font-size: 15px;}}
+.how-little a, .what-little a, .where-little a{
+    @include max-breakpoint(752px){font-size: 15px;}
+    color: #725430;
+}
+
+/*FAQ Page*/
+.main-faq{
+    position: relative;
+    height: 75vh;
+    @include breakpoint(481px, 1024px){
+        height: 60vh;
+    }
+    @include min-breakpoint(1025px){
+        margin-top: 100px;
+        height: 80vh;
+    }
+}
+video{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    @include min-breakpoint(1025px){
+        height: 80vh;
+    }
+}
+.text-filter{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    text-align: justify;
+}
+
+.faq-frame{
+    position: relative;
+    width: 80%;
+    height: 65vh;
+    margin: auto; margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: rgba(145, 122, 95, .75);
+    overflow: hidden; overflow-y: auto;
+    padding: 10px;
+    @include breakpoint(481px, 1024px){
+        height: 55vh;
+    }
+    @include min-breakpoint(1025px){
+        width: 60%;
+        height: 75vh;
+    }
+}
+
+.answered-qs{width: 90%;}
+.question, .answer{
+    width: 100%;
+    margin: 0%;
+    padding: 15px;
+
+}
+
+.question{
+    background-color: #CAB69D;
+    position: relative;
+    cursor: pointer;
+    @include max-breakpoint(480px){font-size:2.8vw;}
+    @include breakpoint(481px, 752px){font-size: 15px;}
+}
+
+.question::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: medium;  
+}
+
+.answer{
+    position: relative;
+    padding: 5px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5%;
+
+}
+
+.answered-qs.active{
+    height: auto;
+    padding: 15px;
+    .answer{
+        height: auto;
+        padding: 15px;
+        background-color: #e0c9ad;
+    }
+}
+
+.email-frame{margin: auto;}
+
+.email-frame .soc-med_links{@extend .soc-med_links;}
+.email-frame .soc-med_links img{
+    visibility: hidden;
+    @include max-breakpoint(752px){visibility: visible;}
+}
