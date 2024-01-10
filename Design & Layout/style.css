@@ -30,7 +30,6 @@ body {
 @media screen and (min-width: 1025px) {
   .navigation {
     /*Handles media queries with minimum screen width given*/
-    position: fixed; /*Nav Bar follows as user scrolls on the page.*/
     height: 100px;
     width: 100%;
     grid-template-columns: 30% 20% 30%;
@@ -638,7 +637,6 @@ footer a:hover {
 @media screen and (min-width: 1025px) {
   .main-faq {
     /*Handles media queries with minimum screen width given*/
-    margin-top: 100px;
     height: 80vh;
   }
 }
@@ -661,7 +659,7 @@ video {
 .text-filter {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   text-align: justify;
 }
 
@@ -761,4 +759,198 @@ video {
   .email-frame .soc-med_links img {
     visibility: visible;
   }
+}
+
+/*ABOUT Page*/
+.main-about {
+  position: relative;
+  height: 75vh;
+  background-image: url("/Media/Images/pexels-aysegul-alp-14850327.jpg");
+  /*Handles media queries with max and min screen widths given*/
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .main-about {
+    height: 90vh;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .main-about {
+    /*Handles media queries with minimum screen width given*/
+    height: 80vh;
+  }
+}
+
+.about-frame {
+  position: relative;
+  width: 80%;
+  height: 65vh;
+  margin: auto;
+  background-color: rgba(202, 168, 127, 0.85);
+  padding: 20px;
+  /*Handles media queries with maximum screen width given*/
+  /*Handles media queries with max and min screen widths given*/
+}
+@media screen and (max-width: 480px) {
+  .about-frame {
+    width: 95%;
+    height: 75vh;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .about-frame {
+    height: 90vh;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .about-frame {
+    /*Handles media queries with minimum screen width given*/
+    width: 60%;
+    height: 75vh;
+  }
+}
+
+.about-frame p {
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  position: relative;
+  /*Handles media queries with maximum screen width given*/
+  /*Handles media queries with max and min screen widths given*/
+}
+@media screen and (max-width: 480px) {
+  .about-frame p {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 752px) {
+  .about-frame p {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .about-frame p {
+    /*Handles media queries with minimum screen width given*/
+    margin-top: 5%;
+  }
+}
+
+/*BASKET Page*/
+.main-cart {
+  position: relative;
+  height: 75vh;
+  background-image: linear-gradient(to bottom, white, #CAB69D, white);
+  /*Handles media queries with max and min screen widths given*/
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .main-cart {
+    height: 90vh;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .main-cart {
+    /*Handles media queries with minimum screen width given*/
+    height: 80vh;
+  }
+}
+
+.cart-frame {
+  position: relative;
+  width: 80%;
+  height: 65vh;
+  margin: auto;
+  padding: 20px;
+  /*Handles media queries with maximum screen width given*/
+  /*Handles media queries with max and min screen widths given*/
+}
+@media screen and (max-width: 480px) {
+  .cart-frame {
+    width: 95%;
+    height: 75vh;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .cart-frame {
+    height: 90vh;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .cart-frame {
+    /*Handles media queries with minimum screen width given*/
+    width: 60%;
+    height: 75vh;
+  }
+}
+
+.affiliates {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.affiliates img {
+  max-width: 90%;
+}
+
+/*PRODUCTS PAGE*/
+.products {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: space-around;
+  margin: auto;
+  height: 100%;
+  /*Handles media queries with maximum screen width given*/
+}
+@media screen and (max-width: 752px) {
+  .products {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.types {
+  background-color: azure;
+  max-width: 400px;
+  max-height: 500px;
+}
+
+.prod-img {
+  width: 90%;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+}
+
+.products h2 {
+  margin-left: 6%;
+  margin-top: 1%;
+}
+
+#prod-one {
+  background-image: url("/Media/Images/1.jpg");
+}
+
+#prod-two {
+  background-image: url("/Media/Images/2.jpg");
+}
+
+#prod-three {
+  background-image: url("/Media/Images/3.jpg");
+}
+
+#prod-four {
+  background-image: url("/Media/Images/4.jpg");
+}
+
+#prod-five {
+  background-image: url("/Media/Images/5.jpg");
+}
+
+#prod-six {
+  background-image: url("/Media/Images/6.jpg");
+}
+
+#prod-seven {
+  background-image: url("/Media/Images/7.jpg");
 }/*# sourceMappingURL=style.css.map */
